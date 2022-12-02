@@ -16,8 +16,8 @@ function reverseString(text) {
     }
     return rev */
 
-    /* //recursion
-    return text === "" ? "" : reverseString(text.substr(1)) + text[0] */
+    //recursion
+    return text === "" ? "" : reverseString(text.substr(1)) + text[0]
 
     /* //reduce()
     return text.split("").reduce((str,char) => char + str, "") */
