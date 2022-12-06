@@ -8,7 +8,14 @@ return the equivalent of the sentence when capitalised. E.g
 
 
 function capSentence(text) {
-   // Code goes here
+   // forEach() method
+   /* let arr = []
+   text.toLowerCase().split(" ").forEach(w => arr.push(w[0].toUpperCase() + w.slice(1)))
+   return arr.join(" ") */
+   //map() method, fastest
+   return text.toLowerCase().split(" ").map(w => w[0].toUpperCase() + w.slice(1)).join(" ")
+  //replace() method, slowest
+  // return text.toLowerCase().split(" ").map(w => w.replace(w[0], w[0].toUpperCase())).join(" ")
 }
 
 
