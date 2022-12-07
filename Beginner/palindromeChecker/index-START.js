@@ -7,7 +7,17 @@ e.g palindromeChecker('racecar') // will return true
 
 
 function palindromeChecker(text) {
-    v// Code goes here
+    //intuitive, slowest
+    // return text.split("").reverse().join("") === text
+    //compare and loop
+    // return text.toLowerCase().split("").every((c,i,a) => c === a[a.length - i - 1])
+    //compare and loop, optimized, fastest
+    for(let i=0;i<text.length/2;i++){
+        if(text[i] !== text[text.length - 1 - i]){
+            return false
+        }
+    }
+    return true
 }
 
 
