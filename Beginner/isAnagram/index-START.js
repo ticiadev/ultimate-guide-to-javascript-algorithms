@@ -8,7 +8,24 @@ don't. E.g
 
 
 function isAnagram(stringA, stringB) {
-    // Code goes here
+    // direct comparison
+    /* stringA = stringA.toLowerCase().split("").sort().join("")
+    stringB = stringB.toLowerCase().split("").sort().join("")
+    return stringA == stringB */
+
+    //character map, faster
+    let chars = {}
+    for(let char of stringA){
+        chars[char] ? chars[char]++ : chars[char] = 1
+    }
+    for(let char of stringB){
+        if(chars[char]){
+            chars[char]++
+        }else{
+            return false
+        }
+    }
+    return true
 }
 
 
