@@ -10,18 +10,18 @@ function mergeArrays(...arrays) {
     arrays.forEach(array => joined = [...joined, ...array])
     return [...new Set([...joined])] */
 
-    //using reduce() and set, own addition
+    //using reduce() and set, own addition, slower than forEach() and set, less code
     // return [...new Set(arrays.reduce((joined,array) => joined.concat(array)))]
 
     //using filter(), fastest
-    /* let joined = []
+    let joined = []
     arrays.forEach(array => joined = [...joined,...array])
-    return joined.filter((x,i) => joined.indexOf(x) === i) */
+    return joined.filter((x,i) => joined.indexOf(x) === i)
 
-    //using reduce() and filter(), own addition
+    //using reduce() and filter(), own addition, slower than set
     // return arrays.reduce((joined,array) => joined.concat(array)).filter((x,i,a) => a.indexOf(x) === i)
 
-    //using reduce()
+    //using reduce(), slower than filter and set
     /* let jointArray = []
 
     arrays.forEach(array => {
@@ -36,9 +36,9 @@ function mergeArrays(...arrays) {
     }, [])
     return uniqueArray */
 
-    //rewrite reduce()
-    return arrays.reduce((joined,array) => joined.concat(array))
-                 .reduce((newArray,item) => {return newArray.includes(item) ? newArray : [...newArray,item]},[])
+    //rewrite reduce(), slightly slower, smaller code
+    /* return arrays.reduce((joined,array) => joined.concat(array))
+                 .reduce((newArray,item) => {return newArray.includes(item) ? newArray : [...newArray,item]},[]) */
 }
 
 
