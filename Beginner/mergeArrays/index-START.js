@@ -5,15 +5,13 @@
 */
 
 function mergeArrays(...arrays) {
+    //using set
+    /* let joined = []
+    arrays.forEach(array => joined = [...joined, ...array])
+    return [...new Set([...joined])] */
 
-    let jointArray = []
-    
-    arrays.forEach(array => {
-        jointArray = [...jointArray, ...array]
-    });
-
-    return [...new Set([...jointArray])]
-
+    //using reduce() and set
+    return [...new Set(arrays.reduce((joined,array) => joined.concat(array)))]
     
 }
 
