@@ -19,7 +19,7 @@ function reverseString(text) {
     //recursion
     return text === "" ? "" : reverseString(text.substr(1)) + text[0]
 
-    /* //reduce()
+    /* //reduce(), claimed to be fastest
     return text.split("").reduce((str,char) => char + str, "") */
 
     /* //own solution: array to reverse
